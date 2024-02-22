@@ -28,6 +28,7 @@ jobs:
             echo "Built succesfully"
 
     test:
+      needs: build
       runs-on: ubuntu-latest
 
       steps:
@@ -49,6 +50,7 @@ jobs:
 
 
     deploy:
+        needs: test
         runs-on: ubuntu-latest
 
         steps:
